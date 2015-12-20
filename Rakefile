@@ -12,13 +12,12 @@ Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'LetsBeRandom'
 
-  app.deployment_target = '9.2'
+  app.deployment_target = '9.0'
   app.device_family = [:iphone]
   app.frameworks << 'SafariServices'
   app.identifier = 'com.liulantao.LetsBeRandom'
 
   app.prerendered_icon = false
-  app.sdk_version = '9.2'
   app.version = '1.0.0'
 
   app.development do
