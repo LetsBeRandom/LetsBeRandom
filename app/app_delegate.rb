@@ -18,17 +18,23 @@ class AppDelegate
 
 private
   def randomup
-    randomUrl = [
-                  "http://blog.liulantao.com/blog/2015/2015-10-04-apache-tcp-backlog.html",
-                  "https://www.v2ex.com",
-                  "http://lwn.net",
-                  "https://news.ycombinator.com/newest"
-                ].sample
-    show randomUrl, @window.rootViewController
+    hn_fetch_item(:newstories) do |item|
+      show item['url'], @window.rootViewController
+    end
+  end
+
+  def hn_fetch_item(list=:newstories, &block)
+    listEntry = 'https://LetsBeRandom.github.io/%s.json' % list
+
+    AFMotion::JSON.get(listEntry) do |result|
+      if result.success?
+        item = result.object.sample
+        block.call(item)
+      end
+    end
   end
 
   def show(urlStr, vc)
-    NSLog("show " + urlStr)
     url = NSURL.URLWithString urlStr
     svc = SFSafariViewController.alloc.initWithURL(url, entersReaderIfAvailable: true)
 
