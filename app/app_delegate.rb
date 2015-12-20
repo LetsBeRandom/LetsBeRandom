@@ -24,7 +24,7 @@ private
   end
 
   def hn_fetch_item(list=:newstories, &block)
-    listEntry = 'https://LetsBeRandom.github.io/%s.json' % list
+    listEntry = 'https://LetsBeRandom.github.io/HackerNewsJSON/%s.json' % list
 
     AFMotion::JSON.get(listEntry) do |result|
       if result.success?
