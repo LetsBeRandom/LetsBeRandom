@@ -14,6 +14,7 @@ Motion::Project::App.setup do |app|
 
   app.deployment_target = '9.2'
   app.device_family = [:iphone]
+  app.frameworks << 'SafariServices'
   app.identifier = 'com.liulantao.LetsBeRandom'
 
   app.prerendered_icon = false
