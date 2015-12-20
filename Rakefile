@@ -11,4 +11,8 @@ end
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'LetsBeRandom'
+
+  app.development do
+    app.provisioning_profile = 'mobileprovision/LetsBeRandom_Development.mobileprovision'
+  end
 end
