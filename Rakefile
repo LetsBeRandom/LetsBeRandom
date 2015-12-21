@@ -10,7 +10,7 @@ end
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
-  app.name = 'LetsBeRandom'
+  app.name = 'Readom'
 
   app.deployment_target = '9.0'
   app.device_family = [:iphone]
