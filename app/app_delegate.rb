@@ -1,7 +1,7 @@
 class AppDelegate
   def application(application, didFinishLaunchingWithOptions:launchOptions)
     rootViewController = UIViewController.alloc.init
-    rootViewController.title = "Let's Be Random!"
+    rootViewController.title = "Readom"
     rootViewController.view.backgroundColor = UIColor.whiteColor
 
     navigationController = UINavigationController.alloc.initWithRootViewController(rootViewController)
@@ -10,7 +10,7 @@ class AppDelegate
     @window.rootViewController = navigationController
     @window.makeKeyAndVisible
 
-    leftBarButtonItem = UIBarButtonItem.alloc.initWithTitle("Random!", style: UIBarButtonItemStylePlain, target: self, action: :randomup)
+    leftBarButtonItem = UIBarButtonItem.alloc.initWithTitle("Go!", style: UIBarButtonItemStylePlain, target: self, action: :randomup)
     rootViewController.navigationItem.leftBarButtonItem = leftBarButtonItem
 
     true
