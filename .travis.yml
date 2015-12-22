@@ -4,8 +4,10 @@ before_install:
   - sudo motion update
 gemfile:
   - Gemfile
-script:
+install:
   - bundle install --jobs=3 --retry=3
   - bundle exec rake pod:install
+before_script:
   - bundle exec rake clean
+script:
   - bundle exec rake spec
