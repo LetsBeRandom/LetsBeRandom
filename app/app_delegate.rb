@@ -29,7 +29,7 @@ private
     AFMotion::JSON.get(listEntry) do |result|
       if result.success?
         item = result.object.sample
-        block.call(item)
+        block.call(item) unless item['url'].nil?
       end
     end
   end
