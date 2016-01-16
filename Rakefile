@@ -17,6 +17,7 @@ Motion::Project::App.setup do |app|
   app.frameworks << 'SafariServices'
   app.identifier = 'com.liulantao.LetsBeRandom'
 
+  app.icons = ['icons/icon-1024.png', 'icons/icon-120.png', 'icons/icon-180.png', 'icons/icon-58.png', 'icons/icon-80.png', 'icons/icon-87.png']
   app.prerendered_icon = false
   app.version = '1.0.0'
 
