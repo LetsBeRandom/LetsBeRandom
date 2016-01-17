@@ -1,4 +1,4 @@
-describe "Application 'LetsBeRandom'" do
+describe "Application 'Readom'" do
   before do
     @app = UIApplication.sharedApplication
   end

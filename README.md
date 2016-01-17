@@ -1,4 +1,4 @@
-# LetsBeRandom
-LetsBeRandom iOS App
+# Readom
+Readom iOS App
 
-[![Build Status](https://travis-ci.org/LetsBeRandom/LetsBeRandom.svg?branch=master)](https://travis-ci.org/LetsBeRandom/LetsBeRandom)
+[![Build Status](https://travis-ci.org/Readom/Readom.svg?branch=master)](https://travis-ci.org/Readom/Readom)
