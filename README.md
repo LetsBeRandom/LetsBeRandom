@@ -1,4 +1,4 @@
-# Readom
-Readom iOS App
+# README
+README iOS App
 
-[![Build Status](https://travis-ci.org/Readom/Readom.svg?branch=master)](https://travis-ci.org/Readom/Readom)
+[![Build Status](https://travis-ci.org/Readom/README.svg?branch=master)](https://travis-ci.org/Readom/README)
