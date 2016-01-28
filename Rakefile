@@ -15,7 +15,7 @@ Motion::Project::App.setup do |app|
   app.deployment_target = '9.0'
   app.device_family = [:iphone]
   app.frameworks << 'SafariServices'
-  app.identifier = 'com.liulantao.README'
+  app.identifier = 'cc.mib.README'
 
   app.icons = ['icons/icon-1024.png', 'icons/icon-120.png', 'icons/icon-180.png', 'icons/icon-58.png', 'icons/icon-80.png', 'icons/icon-87.png']
   app.prerendered_icon = false
