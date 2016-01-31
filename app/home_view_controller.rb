@@ -9,13 +9,38 @@ class HomeViewController < UIViewController
   def viewDidLoad
     @action_button = UIButton.buttonWithType UIButtonTypeRoundedRect
     @action_button.setTitle "README:Go"._, forState: UIControlStateNormal
-    @action_button.frame = [[100, 100], [160, 50]]
+    @action_button.setBackgroundImage UIImage.imageNamed('icons/icon-180.png'), forState:UIControlStateNormal
 
     @action_button.addTarget(self,
       action: :randomup,
       forControlEvents: UIControlEventTouchUpInside)
 
-    self.view.addSubview @action_button
+    subviews = {"randomup_btn" => @action_button}
+    metrics = {"top" => 200, "margin" => 20, "height" => 40, "randomup_btn_height" => 180}
+
+    subviews.values.each do |subview|
+      subview.translatesAutoresizingMaskIntoConstraints = false
+      self.view.addSubview(subview) unless subview.superview
+    end
+
+    c1 = NSLayoutConstraint.constraintsWithVisualFormat "H:|-(>=margin)-[randomup_btn(==randomup_btn_height@50)]-(>=margin)-|",
+      options: NSLayoutFormatAlignAllCenterX|NSLayoutFormatAlignAllCenterY,
+      metrics: metrics,
+      views: subviews
+
+    c2 = NSLayoutConstraint.constraintsWithVisualFormat "V:|-top-[randomup_btn(==randomup_btn_height)]",
+      options: NSLayoutFormatAlignAllCenterX|NSLayoutFormatAlignAllCenterY,
+      metrics: metrics,
+      views: subviews
+
+    c3 = NSLayoutConstraint.constraintWithItem @action_button,
+      attribute: NSLayoutAttributeCenterX,
+      relatedBy: NSLayoutRelationEqual,
+      toItem: self.view,
+      attribute: NSLayoutAttributeCenterX,
+      multiplier: 1, constant:0
+
+    self.view.addConstraints [c1, c2, c3].flatten
   end
 
 private
