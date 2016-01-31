@@ -65,6 +65,7 @@ PLATFORMS
 
 DEPENDENCIES
   afmotion
+  motion-cocoapods
   rake
 
 BUNDLED WITH
