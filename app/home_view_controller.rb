@@ -7,15 +7,18 @@ class HomeViewController < UIViewController
   end
 
   def viewDidLoad
+    @action_label = UILabel.new
+    @action_label.text = "README:Go"._
+    @action_label.sizeToFit
+
     @action_button = UIButton.buttonWithType UIButtonTypeRoundedRect
-    @action_button.setTitle "README:Go"._, forState: UIControlStateNormal
     @action_button.setBackgroundImage UIImage.imageNamed('icons/icon-180.png'), forState:UIControlStateNormal
 
     @action_button.addTarget(self,
       action: :randomup,
       forControlEvents: UIControlEventTouchUpInside)
 
-    subviews = {"randomup_btn" => @action_button}
+    subviews = {"randomup_btn" => @action_button, "randomup_label" => @action_label}
     metrics = {"top" => 200, "margin" => 20, "height" => 40, "randomup_btn_height" => 180}
 
     subviews.values.each do |subview|
@@ -23,24 +26,33 @@ class HomeViewController < UIViewController
       self.view.addSubview(subview) unless subview.superview
     end
 
-    c1 = NSLayoutConstraint.constraintsWithVisualFormat "H:|-(>=margin)-[randomup_btn(==randomup_btn_height@50)]-(>=margin)-|",
-      options: NSLayoutFormatAlignAllCenterX|NSLayoutFormatAlignAllCenterY,
-      metrics: metrics,
-      views: subviews
+    begin
+      c1 = NSLayoutConstraint.constraintsWithVisualFormat "H:|-(>=margin)-[randomup_btn(==randomup_btn_height@50)]-(>=margin)-|",
+        options: 0,
+        metrics: metrics,
+        views: subviews
 
-    c2 = NSLayoutConstraint.constraintsWithVisualFormat "V:|-top-[randomup_btn(==randomup_btn_height)]",
-      options: NSLayoutFormatAlignAllCenterX|NSLayoutFormatAlignAllCenterY,
-      metrics: metrics,
-      views: subviews
+      c2 = NSLayoutConstraint.constraintsWithVisualFormat "V:|-top-[randomup_label]-margin-[randomup_btn(==randomup_btn_height)]",
+        options: 0,
+        metrics: metrics,
+        views: subviews
 
-    c3 = NSLayoutConstraint.constraintWithItem @action_button,
-      attribute: NSLayoutAttributeCenterX,
-      relatedBy: NSLayoutRelationEqual,
-      toItem: self.view,
-      attribute: NSLayoutAttributeCenterX,
-      multiplier: 1, constant:0
+      c3 = NSLayoutConstraint.constraintWithItem @action_label,
+        attribute: NSLayoutAttributeCenterX,
+        relatedBy: NSLayoutRelationEqual,
+        toItem: self.view,
+        attribute: NSLayoutAttributeCenterX,
+        multiplier: 1, constant:0
 
-    self.view.addConstraints [c1, c2, c3].flatten
+      c4 = NSLayoutConstraint.constraintWithItem @action_button,
+        attribute: NSLayoutAttributeCenterX,
+        relatedBy: NSLayoutRelationEqual,
+        toItem: self.view,
+        attribute: NSLayoutAttributeCenterX,
+        multiplier: 1, constant:0
+
+      self.view.addConstraints [c1, c2, c3, c4].flatten
+    end
   end
 
 private
