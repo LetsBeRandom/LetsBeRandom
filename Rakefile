@@ -12,7 +12,7 @@ Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
   app.name = 'README'
 
-  app.deployment_target = '9.0'
+  app.deployment_target = '7.0'
   app.device_family = [:iphone]
   app.frameworks << 'SafariServices'
   app.identifier = 'cc.mib.README'
