@@ -3,7 +3,7 @@ class HomeViewController < UIViewController
     self.title = "README"._
 
     self.view = UIView.new
-    self.view.backgroundColor = UIColor.whiteColor
+    self.view.backgroundColor = UIColor.blackColor
   end
 
   def viewDidLoad
