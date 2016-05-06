@@ -4,6 +4,8 @@ class AppDelegate
     @window.rootViewController = UINavigationController.alloc.initWithRootViewController(HomeViewController.new)
     @window.makeKeyAndVisible
 
+    NSURLProtocol.registerClass(RMURLProtocol)
+
     true
   end
 end
