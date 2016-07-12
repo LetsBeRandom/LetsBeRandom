@@ -24,4 +24,7 @@ Motion::Project::App.setup do |app|
   app.development do
     app.provisioning_profile = 'mobileprovision/README_Development.mobileprovision'
   end
+  app.release do
+    app.provisioning_profile = "mobileprovision/README_#{ENV['REL'] || 'AppStore'}.mobileprovision"
+  end
 end
