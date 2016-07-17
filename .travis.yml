@@ -1,5 +1,4 @@
 language: objective-c
-osx_image: xcode7.2
 before_install:
   - (ruby --version)
   - sudo motion update
@@ -11,4 +10,6 @@ install:
 before_script:
   - bundle exec rake clean
 script:
+  - bundle install --jobs=3 --retry=3
+  - bundle exec rake clean
   - bundle exec rake spec
