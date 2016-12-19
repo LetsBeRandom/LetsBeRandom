@@ -63,12 +63,12 @@ GEM
     thread_safe (0.3.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
-    xcodeproj (1.4.1)
+    xcodeproj (1.4.2)
       CFPropertyList (~> 2.3.3)
       activesupport (>= 3)
       claide (>= 1.0.1, < 2.0)
       colored (~> 1.2)
-      nanaimo (~> 0.2.0)
+      nanaimo (~> 0.2.3)
 
 PLATFORMS
   ruby
