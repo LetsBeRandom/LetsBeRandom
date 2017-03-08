@@ -1,13 +1,9 @@
 class AppDelegate
-  def application(application, didFinishLaunchingWithOptions:launchOptions)
-    rootViewController = UIViewController.alloc.init
-    rootViewController.title = 'README'
-    rootViewController.view.backgroundColor = UIColor.whiteColor
-
-    navigationController = UINavigationController.alloc.initWithRootViewController(rootViewController)
-
+  def application(application, didFinishLaunchingWithOptions: options)
     @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
-    @window.rootViewController = navigationController
+    main_ctlr = MainController.new
+    nav_ctlr = UINavigationController.alloc.initWithRootViewController(main_ctlr)
+    @window.rootViewController = nav_ctlr
     @window.makeKeyAndVisible
 
     true
