@@ -1,11 +1,9 @@
-class AppDelegate
-  def application(application, didFinishLaunchingWithOptions: options)
-    @window = UIWindow.alloc.initWithFrame(UIScreen.mainScreen.bounds)
-    main_ctlr = MainController.new
-    nav_ctlr = UINavigationController.alloc.initWithRootViewController(main_ctlr)
-    @window.rootViewController = nav_ctlr
-    @window.makeKeyAndVisible
+class AppDelegate < PM::Delegate
+  status_bar true, animation: :none
 
-    true
+  def on_load(app, options)
+    return true if RUBYMOTION_ENV == "test"
+    open HomeScreen.new(nav_bar: true)
   end
+
 end
