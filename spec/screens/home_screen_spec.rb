@@ -2,7 +2,7 @@ describe HomeScreen do
   tests HomeScreen
 
   def home_screen
-    @home_screen ||= HomeScreen.new(nav_bar: true)
+    @home_screen ||= HomeScreen.new(nav_bar: true).tap {|screen| screen.on_load }
   end
 
   def controller
@@ -20,6 +20,7 @@ describe HomeScreen do
   end
 
   it "opens the help screen when tapping Help" do
+    tap("Help")
     tap("Help")
     controller.topViewController.should.be.kind_of(HelpScreen)
   end

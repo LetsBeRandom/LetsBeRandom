@@ -1,0 +1,15 @@
+language: objective-c
+osx_image: xcode8
+branches:
+  only:
+    - travis
+    - master
+before_install:
+  - rvm get stable --auto-dotfiles
+  - rvm use 2.3 --install --binary --fuzzy
+  - (ruby --version)
+gemfile:
+  - Gemfile
+script:
+  - bundle install --jobs=3 --retry=3
+  - bundle exec rake pod:install clean spec

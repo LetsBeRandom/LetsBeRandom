@@ -2,6 +2,9 @@ source 'https://rubygems.org'
 
 gem 'rake'
 
+gem 'motion-settings-bundle', github: 'picapica/motion-settings-bundle'
+gem 'motion-acknowledgements', github: 'picapica/motion-acknowledgements'
+
 # ProMotion
 gem 'ProMotion', '~> 2.0'
 # gem 'ProMotion-menu', '~> 1.0' # PM::Menu
@@ -10,10 +13,13 @@ gem 'ProMotion', '~> 2.0'
 # gem 'ProMotion-map', '~> 0.5'  # PM::MapScreen
 
 # Awesome gem that adds a ton of helpers.
-# gem 'sugarcube', require: [ 'sugarcube-common' ]
+gem 'sugarcube', require: [ 'sugarcube-common' ]
 
 # Layout and styling gem
-# gem 'motion-kit', '~> 0.17'
+gem 'motion-kit'
+
+# Events
+gem 'motion-kit-events'
 
 # Front end toolkit
 # gem 'ruby_motion_query', '~> 1.1'
@@ -22,10 +28,12 @@ gem 'ProMotion', '~> 2.0'
 # gem 'cdq', '~> 0.1'
 
 # Networking
-# gem 'afmotion', '~> 2.5'
+gem 'afmotion'
 
 # Screenshot acceptance comparison tool
 # gem 'motion-juxtapose', '~> 0.2'
 
 # Awesome Print
 # gem 'awesome_print_motion', '~> 0.1'
+
+gem 'moticons'
