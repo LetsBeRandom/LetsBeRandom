@@ -90,7 +90,7 @@ GEM
     ruby-macho (0.2.6)
     sugarcube (3.4.0)
     thread_safe (0.3.6)
-    tzinfo (1.2.2)
+    tzinfo (1.2.3)
       thread_safe (~> 0.1)
     xcodeproj (1.4.2)
       CFPropertyList (~> 2.3.3)
