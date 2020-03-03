@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rake'
 
-gem 'motion-settings-bundle', github: 'picapica/motion-settings-bundle'
-gem 'motion-acknowledgements', github: 'picapica/motion-acknowledgements'
+gem 'motion-settings-bundle'
+gem 'motion-acknowledgements'
 
 # ProMotion
 gem 'ProMotion', '~> 2.0'
